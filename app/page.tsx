@@ -1,103 +1,92 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect } from "react";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
+import VideoBackground from "@/components/VideoBackground";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  useEffect(() => {
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          target.style.animationDelay = "0.2s";
+          target.classList.add("fade-in");
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Enhanced parallax effect for video
+    let ticking = false;
+
+    function updateBackground() {
+      const scrolled = window.pageYOffset;
+      const video =
+        document.querySelector<HTMLVideoElement>(".video-background");
+
+      if (video) {
+        video.style.transform = `translateY(${scrolled * 0.5}px) scale(${
+          1.1 + scrolled * 0.0001
+        })`;
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        requestAnimationFrame(updateBackground);
+        ticking = true;
+      }
+    });
+
+    // Dynamic background color change on scroll
+    // window.addEventListener("scroll", () => {
+    //   const scrollPercent =
+    //     window.pageYOffset /
+    //     (document.documentElement.scrollHeight - window.innerHeight);
+    //   console.log("Scroll Percent:", scrollPercent);
+    //   const baseHue = 220; // Professional blue base
+    //   const hue = baseHue + scrollPercent * 10; // Subtle color shift
+    //   const saturation = 25 + scrollPercent * 15; // Low saturation for professionalism
+    //   const lightness = 12 + scrollPercent * 1; // Dark theme
+    //   document.body.style.background = `linear-gradient(135deg,
+    //             hsl(${hue}, ${saturation}%, ${lightness}%) 0%,
+    //             hsl(${hue + 10}, ${saturation + 5}%, ${lightness + 5}%) 25%,
+    //             hsl(${hue + 20}, ${saturation + 10}%, ${lightness + 10}%) 50%,
+    //             hsl(${hue + 30}, ${saturation + 15}%, ${lightness + 15}%) 75%,
+    //             hsl(${hue + 40}, ${saturation + 20}%, ${
+    //     lightness + 20
+    //   }%) 100%)`;
+    // });
+  }, []);
+  return (
+    <>
+      <VideoBackground />
+      <div className="container">
+        <Header />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
+    </>
   );
 }
