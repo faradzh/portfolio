@@ -16,7 +16,12 @@ export default function Hero() {
       </p>
       <div className="flex items-center justify-center">
         <Card>
-          <a href="#about" className="z-1 py-4! px-8!">
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="z-1 py-4! px-8!"
+          >
             Get my CV
           </a>
         </Card>

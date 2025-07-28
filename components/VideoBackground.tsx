@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+
 import { createCanvasBackground } from "./utils";
 
 export default function VideoBackground() {
