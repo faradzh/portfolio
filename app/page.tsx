@@ -55,26 +55,6 @@ export default function Home() {
         ticking = true;
       }
     });
-
-    // Dynamic background color change on scroll
-    // window.addEventListener("scroll", () => {
-    //   const scrollPercent =
-    //     window.pageYOffset /
-    //     (document.documentElement.scrollHeight - window.innerHeight);
-    //   console.log("Scroll Percent:", scrollPercent);
-    //   const baseHue = 220; // Professional blue base
-    //   const hue = baseHue + scrollPercent * 10; // Subtle color shift
-    //   const saturation = 25 + scrollPercent * 15; // Low saturation for professionalism
-    //   const lightness = 12 + scrollPercent * 1; // Dark theme
-    //   document.body.style.background = `linear-gradient(135deg,
-    //             hsl(${hue}, ${saturation}%, ${lightness}%) 0%,
-    //             hsl(${hue + 10}, ${saturation + 5}%, ${lightness + 5}%) 25%,
-    //             hsl(${hue + 20}, ${saturation + 10}%, ${lightness + 10}%) 50%,
-    //             hsl(${hue + 30}, ${saturation + 15}%, ${lightness + 15}%) 75%,
-    //             hsl(${hue + 40}, ${saturation + 20}%, ${
-    //     lightness + 20
-    //   }%) 100%)`;
-    // });
   }, []);
   return (
     <>
