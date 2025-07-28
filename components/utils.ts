@@ -181,9 +181,9 @@ export function createCanvasBackground(videoElement: HTMLVideoElement) {
 
   animate();
 
-  // Resize canvas on window resize
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+  // // Resize canvas on window resize
+  // window.addEventListener("resize", () => {
+  //   canvas.width = window.innerWidth;
+  //   canvas.height = window.innerHeight;
+  // });
 }
