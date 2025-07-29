@@ -22,7 +22,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="z-1 py-4! px-8!"
           >
-            Get my CV
+            View my CV
           </a>
         </Card>
       </div>
