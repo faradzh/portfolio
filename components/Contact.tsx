@@ -3,7 +3,7 @@ import { Card } from "./Card";
 export default function Contact() {
   return (
     <section id="contact" className="mb-[80px] fade-in">
-      <div className="glass contact-info">
+      <div className="glass flex justify-center items-center flex-col p-[30px]">
         <h2 className="text-[2.5rem] font-bold text-center mb-[50px] bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
           Let&#39;s Connect
         </h2>

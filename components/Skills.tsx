@@ -1,66 +1,39 @@
 import { Card } from "./Card";
 
 export default function Skills() {
+  const skillCategories = [
+    {
+      title: "Frontend",
+      skills: ["React", "Svelte", "TypeScript", "Next.js", "Tailwind CSS"],
+    },
+    {
+      title: "Backend",
+      skills: ["Node.js", "Python", "GraphQL", "PostgreSQL", "MongoDB"],
+    },
+    {
+      title: "Cloud & DevOps",
+      skills: ["AWS", "Docker", "CI/CD"],
+    },
+  ];
+
   return (
     <section id="skills" className="mb-[80px] fade-in">
       <h2 className="text-[2.5rem] font-bold text-center mb-[50px] bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
         Skills & Technologies
       </h2>
       <div className="skills-container">
-        <div className="glass skill-category">
-          <h4>Frontend</h4>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Card>
-              <span className="py-2! px-4!">React</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">Svelte</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">TypeScript</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">Next.js</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">Tailwind CSS</span>
-            </Card>
+        {skillCategories.map((category) => (
+          <div key={category.title} className="glass p-[30px] text-center">
+            <h4 className="text-[1.3rem] mb-[20px]">{category.title}</h4>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {category.skills.map((skill) => (
+                <Card key={skill}>
+                  <span className="py-2 px-4">{skill}</span>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="glass skill-category">
-          <h4>Backend</h4>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Card>
-              <span className="py-2! px-4!">Node.js</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">Python</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">GraphQL</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">PostgreSQL</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">MongoDB</span>
-            </Card>
-          </div>
-        </div>
-        <div className="glass skill-category">
-          <h4>Cloud & DevOps</h4>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Card>
-              <span className="py-2! px-4!">AWS</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">Docker</span>
-            </Card>
-            <Card>
-              <span className="py-2! px-4!">CI/CD</span>
-            </Card>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
