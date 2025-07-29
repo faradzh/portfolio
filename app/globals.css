@@ -248,13 +248,6 @@ header {
   color: #fff;
 }
 
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
 .skill-tag {
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.2);
@@ -273,12 +266,6 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
-}
-
-.project-card {
-  padding: 0;
-  overflow: hidden;
-  transition: all 0.3s ease;
 }
 
 .project-card:hover {

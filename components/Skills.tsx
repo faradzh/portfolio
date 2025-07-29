@@ -9,7 +9,7 @@ export default function Skills() {
       <div className="skills-container">
         <div className="glass skill-category">
           <h4>Frontend</h4>
-          <div className="skill-tags">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Card>
               <span className="py-2! px-4!">React</span>
             </Card>
@@ -29,7 +29,7 @@ export default function Skills() {
         </div>
         <div className="glass skill-category">
           <h4>Backend</h4>
-          <div className="skill-tags">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Card>
               <span className="py-2! px-4!">Node.js</span>
             </Card>
@@ -49,7 +49,7 @@ export default function Skills() {
         </div>
         <div className="glass skill-category">
           <h4>Cloud & DevOps</h4>
-          <div className="skill-tags">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Card>
               <span className="py-2! px-4!">AWS</span>
             </Card>
