@@ -11,19 +11,32 @@ export default function Contact() {
           Ready to bring your ideas to life? Let&#39;s discuss how we can work
           together to create something amazing.
         </p>
-        <div className="contact-links">
+        <div className="flex justify-center gap-6 mt-10 flex-nowrap">
           <Card>
-            <a href="mailto:faradj.musaev@gmail.com" className="py-4! px-8!">
+            <a
+              href="mailto:faradj.musaev@gmail.com"
+              className="py-4! px-8! z-1"
+            >
               Email
             </a>
           </Card>
           <Card>
-            <a href="https://linkedin.com/in/faradzh" className="py-4! px-8!">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://linkedin.com/in/faradzh"
+              className="py-4! px-8! z-1"
+            >
               LinkedIn
             </a>
           </Card>
           <Card>
-            <a href="https://github.com/faradzh" className="py-4! px-8!">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/faradzh"
+              className="py-4! px-8! z-1"
+            >
               GitHub
             </a>
           </Card>

@@ -312,14 +312,6 @@ header {
   padding: 60px 40px;
 }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
 .contact-link {
   padding: 15px 30px;
   background: rgba(255, 255, 255, 0.1);

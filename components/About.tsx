@@ -5,7 +5,7 @@ export default function About() {
         About Me
       </h2>
       <div className="flex justify-center">
-        <p className="tracking-extra-wide">
+        <p className="leading-loose">
           I&#39;m a software engineer with 9 years of experience building
           scalable web and mobile applications.
           <br /> I specialize in React and Node.js with a keen eye for user
