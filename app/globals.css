@@ -139,6 +139,7 @@ header {
 }
 
 .hero h1 {
+  font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
   background: linear-gradient(135deg, #fff, #e0e0e0);

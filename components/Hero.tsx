@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="flex justify-center">
-        <h1 className="text-2xl">
+        <h1>
           Faradzh Musaev
           <Speaker />
         </h1>
