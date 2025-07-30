@@ -3,9 +3,9 @@ import Speaker from "./Speaker";
 
 export default function Hero() {
   return (
-    <section className="hero fade-in">
+    <section className="hero">
       <div className="flex justify-center">
-        <h1>
+        <h1 className="text-2xl">
           Faradzh Musaev
           <Speaker />
         </h1>

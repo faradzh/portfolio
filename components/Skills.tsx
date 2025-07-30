@@ -24,7 +24,7 @@ export default function Skills() {
       <div className="skills-container">
         {skillCategories.map((category) => (
           <div key={category.title} className="glass p-[30px] text-center">
-            <h4 className="text-[1.3rem] mb-[20px]">{category.title}</h4>
+            <h3 className="text-[1.3rem] mb-[20px]">{category.title}</h3>
             <div className="flex flex-wrap gap-4 justify-center">
               {category.skills.map((skill) => (
                 <Card key={skill}>

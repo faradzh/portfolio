@@ -31,30 +31,6 @@ export default function Home() {
     document.querySelectorAll(".fade-in").forEach((el) => {
       observer.observe(el);
     });
-
-    // Enhanced parallax effect for video
-    // let ticking = false;
-
-    // function updateBackground() {
-    //   const scrolled = window.pageYOffset;
-    //   const video =
-    //     document.querySelector<HTMLVideoElement>(".video-background");
-
-    //   if (video) {
-    //     video.style.transform = `translateY(${scrolled * 0.5}px) scale(${
-    //       1.1 + scrolled * 0.0001
-    //     })`;
-    //   }
-
-    //   ticking = false;
-    // }
-
-    // window.addEventListener("scroll", () => {
-    //   if (!ticking) {
-    //     requestAnimationFrame(updateBackground);
-    //     ticking = true;
-    //   }
-    // });
   }, []);
   return (
     <>

@@ -11,7 +11,7 @@ export default function Contact() {
           Ready to bring your ideas to life? Let&#39;s discuss how we can work
           together to create something amazing.
         </p>
-        <div className="flex justify-center gap-6 mt-10 flex-nowrap">
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
           <Card>
             <a
               href="mailto:faradj.musaev@gmail.com"
