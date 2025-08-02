@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="hero fade-in">
       <div className="flex justify-center">
-        <h1>
+        <h1 className="relative">
           Faradzh Musaev
           <Speaker />
         </h1>
