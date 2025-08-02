@@ -1,9 +1,4 @@
 export function createCanvasBackground(videoElement: HTMLVideoElement) {
-  console.log(
-    "Creating canvas background for video element",
-    videoElement.parentNode
-  );
-
   const video = videoElement;
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
