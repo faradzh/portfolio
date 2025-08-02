@@ -15,7 +15,7 @@ export default function Speaker() {
   return (
     <span
       onClick={handleClick}
-      className="absolute top-[-1rem] sm:top-0 right-0 hover:scale-110 transition-transform duration-300 z-10 cursor-pointer animate-pulse will-change-transform h-7 w-7"
+      className="absolute top-[-1rem] sm:top-0 right-0 hover:scale-110 transition-transform duration-300 z-10 cursor-pointer animate-bounce will-change-transform h-7 w-7"
     >
       <Volume2 className="h-7 w-7" />
       <audio preload="none" src="/intro.m4a" ref={audioRef} />
